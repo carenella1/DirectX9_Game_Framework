@@ -36,9 +36,9 @@
 #include "EventManager.h"
 #include "InputManager.h"
 #include "UIManager.h"
+#include "TextureManager.h"
 #include "Direct3D.h"
 #include "Vector.h"
-#include "Texture.h"
 #include "Timer.h"
 #include "Debug.h"
 

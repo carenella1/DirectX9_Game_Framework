@@ -30,7 +30,7 @@ namespace Smoke
 		// Keep inherited object within boundaries (ie. game screen)
 		virtual void KeepInBounds() = 0;
 
-		// Keeps track of the player's direction
+		// Keeps track of the entity's direction
 		bool facingLeft;
 		bool facingUp;
 
