@@ -24,7 +24,7 @@ namespace Smoke
 		// Utility functions
 		/////////////////////
 		bool Load(std::string filename, D3DCOLOR transcolor = D3DCOLOR_XRGB(255, 255, 255));
-
+		
 		//////////////
 		// Accessors
 		//////////////

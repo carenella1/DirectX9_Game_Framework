@@ -12,6 +12,7 @@ namespace Smoke
 		_eventManager = NULL;
 		_inputManager = NULL;
 		_uiManager = NULL;
+		_textureManager = NULL;
 		_debugger = NULL;
 		_coreFrameCount = 0;
 		_coreTimer = new Timer();
@@ -35,6 +36,7 @@ namespace Smoke
 		_eventManager = &EventManager::getInstance();		// Create a pointer to event manager
 		_inputManager = &InputManager::getInstance();		// Create a pointer to input manager
 		_uiManager = &UIManager::getInstance();				// Create a pointer to UI manager
+		_textureManager = &TextureManager::getInstance();	// Create a pointer to texture manager
 		_debugger = &Debug::getInstance();					// Create a pointer to debugger
 		_directX = &Direct3D::getInstance();				// Create a pointer to DirectX wrapper object
 
@@ -47,8 +49,17 @@ namespace Smoke
 			return false;
 		}
 
+		//////////////////////////////
+		// Initialize texture manager
+		//////////////////////////////
+		if (!_textureManager->Initialize())
+		{
+			debug << "\tFailed to initialize InputManager" << std::endl;
+			return false;
+		}
+
 		//////////////////////////
-		// Create UI object
+		// Initialize UI object
 		//////////////////////////
 		if (!_uiManager->Initialize("Calibri", 24))
 		{
@@ -56,9 +67,9 @@ namespace Smoke
 			return false;
 		}
 
-		////////////////////////////////
-		// Call engine init functions
-		////////////////////////////////
+		/////////////////////////////
+		// Initialize input manager
+		/////////////////////////////
 		if (!_inputManager->Initialize())
 		{
 			debug << "\tInput failed to initialize." << std::endl;
@@ -67,7 +78,9 @@ namespace Smoke
 		else
 			debug << "\tInput initialized." << std::endl;
 
+		///////////////////////
 		// Initialize debugger
+		///////////////////////
 		if (!_debugger->Initialize())
 		{
 			debug << "\tFailed to initialize debugger" << std::endl;
@@ -92,6 +105,13 @@ namespace Smoke
 			_debugger->Shutdown();
 			delete _debugger;
 			_debugger = NULL;
+		}
+
+		if (_textureManager)
+		{
+			_textureManager->Shutdown();
+			delete _textureManager;
+			_textureManager = NULL;
 		}
 
 		// Shutdown UI

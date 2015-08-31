@@ -48,6 +48,9 @@ namespace Smoke
 		_posVector.x = newX;
 		_posVector.y = newY;
 
+		// Get the texture from the texture manager
+		_texture = g_Engine->GetTextureManager()->RetrieveTexture(textureToUse)->GetTexture();
+
 		_curFrame = _startFrame;	// Set current frame to the start frame
 	}
 

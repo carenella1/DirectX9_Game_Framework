@@ -13,6 +13,7 @@ namespace Smoke
 	void Level1()
 	{
 		// Load all object for Level1
+		
 	}
 
 

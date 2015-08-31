@@ -195,4 +195,9 @@
       <Filter>Framework\DirectX</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="textureList.txt">
+      <Filter>Game\Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

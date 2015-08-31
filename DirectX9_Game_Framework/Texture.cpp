@@ -18,8 +18,11 @@ namespace Smoke
 
 	void Texture::Release()
 	{
-		if (_texture->Release() > 0)
-			debug << "\tFailed to release a texture" << std::endl;
+		if (_texture)
+		{
+			if (_texture->Release() > 0)
+				debug << "\tFailed to release a texture" << std::endl;
+		}
 	}
 
 

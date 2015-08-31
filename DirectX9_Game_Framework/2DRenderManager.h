@@ -1,5 +1,6 @@
 #ifndef TWODRENDERMANAGER_H
 #define TWODRENDERMANAGER_H
+#include "Vector.h"
 
 ///////////////////////////////////////
 // Handles all animation and rendering

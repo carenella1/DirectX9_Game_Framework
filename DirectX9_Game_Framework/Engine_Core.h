@@ -76,9 +76,10 @@ namespace Smoke
 		////////////////////////
 		// Managers / Handlers
 		////////////////////////
-		EventManager *_eventManager;							// Event manager object
-		InputManager *_inputManager;							// Input core object
+		EventManager *_eventManager;							// Event manager pointer
+		InputManager *_inputManager;							// Input core pointer
 		UIManager *_uiManager;									// UI object pointer
+		TextureManager *_textureManager;						// Texture manager pointer
 		Debug *_debugger;										// In-Game debugger
 		
 		/////////////////////
@@ -111,6 +112,7 @@ namespace Smoke
 		EventManager* GetEventManager() { return _eventManager; }		// Return pointer to Event Manager
 		InputManager* GetInputManager() { return _inputManager; }		// Return pointer to Input Manager
 		UIManager* GetUIManager() { return _uiManager; }				// Return pointer to UI Manager
+		TextureManager* GetTextureManager() { return _textureManager; }	// Return a pointer to texture manager
 		Debug* GetDebugger() { return _debugger; }						// Return pointer to Debugger
 		Timer* GetCoreTimer() { return _coreTimer; }					// Return pointer to Core Timer
 
