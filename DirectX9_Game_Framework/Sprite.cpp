@@ -15,7 +15,7 @@ namespace Smoke
 		_texture = NULL;
 	}
 
-
+	// poopy mc poopyhead
 	Sprite::~Sprite()
 	{
 		if (_textureLoaded)
